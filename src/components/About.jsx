@@ -14,11 +14,10 @@ export default function About() {
           y: 100,
           scale: 0.75,
           opacity: 0,
-          stagger: 1,
           scrollTrigger: {
             trigger: item,
-            start: "top bottom",
-            end: "top 60%",
+            start: "top 80%",
+            end: "top 65%",
             scrub: true,
           },
         });

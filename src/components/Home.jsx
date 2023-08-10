@@ -62,10 +62,10 @@ export default function Home() {
       ref={myRef}
     >
       {/* name section  */}
-      <div className="md:w-[100%] min-h-[20vh] text-center mt-[4rem] md:text-8xl font-[600] text-5xl">
-        <div className="heading1">Rosalina</div>
-        <div className="heading1 bg-gradient-to-r from-[indigo] to-greenShade bg-clip-text text-transparent pl-8">
-          William
+      <div className="md:w-[100%] min-h-[20vh] text-center mt-[4rem]  font-[600] ">
+        <div className="heading1 text-5xl md:text-8xl">TAIMOOR ALI</div>
+        <div className="heading1 bg-gradient-to-r from-[indigo] to-greenShade bg-clip-text text-transparent md:pl-8 text-4xl md:text-6xl">
+          Frontend Web Developer
         </div>
       </div>
 

@@ -28,7 +28,8 @@ export default function Contacts() {
 
   return (
     <main
-      className="flex relative w-full bg-darkLite  py-20 md:gap-5 gap-10 flex-col lg:px-32 md:flex-row"
+      className="flex relative w-full bg-darkLite  py-20 md:gap-5 gap-10 flex-col lg:px-32 md:flex-row 
+      md:min-h-[70vh]"
       id="contact"
       ref={contacts}
     >
