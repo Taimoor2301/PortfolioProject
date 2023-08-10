@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
-import Service from "./servicesComponents/service";
+import Service from "./servicesComponents/Service";
 
 import { ScrollTrigger, gsap } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
