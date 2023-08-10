@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: poppins;
+  scroll-behavior: smooth;
+  background-color: rgb(34 34 34);
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#service-container {
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+#service-container:hover {
+  scale: 1.1;
+  background-color: black;
+  translate: (0, -10px);
+  #text {
+    width: initial;
+  }
+}
