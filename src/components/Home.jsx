@@ -1,5 +1,5 @@
 import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
-import { Bounce, gsap } from "gsap";
+import { Power3, gsap } from "gsap";
 
 let svg = (
   <svg
@@ -45,6 +45,13 @@ export default function Home() {
           duration: 0.8,
           stagger: 0.2,
         })
+        .from(".icon", {
+          y: 300,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.7,
+          ease: Power3.easeOut,
+        })
         .from(".triangle", { opacity: 0, x: 400 })
         .from(".circle", { x: -100, opacity: 0 });
     }, myRef);
@@ -58,19 +65,30 @@ export default function Home() {
 
   return (
     <main
-      className="flex md:flex-row flex-col gap-2 md:gap-10 bg-darkPrimary text-[white] py-4 px-2"
+      className="flex md:flex-row flex-col gap-2 md:gap-10text-[white] py-4 px-2"
       ref={myRef}
+      id="home"
     >
       {/* name section  */}
-      <div className="md:w-[100%] min-h-[20vh] text-center mt-[4rem]  font-[600] ">
-        <div className="heading1 text-5xl md:text-8xl">TAIMOOR ALI</div>
-        <div className="heading1 bg-gradient-to-r from-[indigo] to-greenShade bg-clip-text text-transparent md:pl-8 text-4xl md:text-6xl">
-          Frontend Web Developer
+      <div className="text-center md:text-right mt-[4rem] font-[600] flex-1 ">
+        <div className="heading1 text-5xl lg:text-8xl text-[white]">
+          TAIMOOR ALI
+        </div>
+
+        <div className="heading1 bg-gradient-to-r from-[indigo] to-greenShade bg-clip-text text-4xl text-transparent">
+          Web Developer
+        </div>
+
+        <div className="flex gap-5 text-[white] text-4xl lg:text-6xl justify-center mt-8 cursor-pointer">
+          <i className="fa-brands fa-instagram icon cursor-pointer hover:text-orangeMain"></i>
+          <i className="fa-brands fa-facebook icon cursor-pointer hover:text-orangeMain "></i>
+          <i className="fa-brands fa-linkedin icon cursor-pointer hover:text-orangeMain"></i>
+          <i className="fa-brands fa-github icon cursor-pointer hover:text-orangeMain"></i>
         </div>
       </div>
 
       {/* info section  */}
-      <div className="lg:w-[80%] flex flex-col items-center md:items-start text-center md:text-start  gap-5 px-5">
+      <div className="lg:w-[80%] flex-1 flex flex-col items-center md:items-start text-center md:text-start  gap-5 px-5">
         {/* shapes */}
         <div className="flex flex-col gap-10 px-8 items-center">
           <div className="triangle"> {svg}</div>
@@ -85,7 +103,7 @@ export default function Home() {
           <div className=" bg-orangeMain h-1 w-[20%] rounded"></div>
         </div>
 
-        <div className="md:text-4xl text-2xl lg:w-[70%] font-[500] text">
+        <div className="md:text-4xl text-2xl lg:w-[70%] font-[600] text-[white] text">
           Based in Pakistan, I'm WEB Developer and WEB Designer
         </div>
 

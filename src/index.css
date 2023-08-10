@@ -15,6 +15,12 @@ html {
   scroll-behavior: smooth;
 }
 
+#home {
+  background-image: url(./assets/bg.svg);
+  background-size: cover;
+  background-position: center;
+}
+
 #service-container {
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }

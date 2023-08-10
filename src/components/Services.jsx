@@ -35,7 +35,7 @@ export default function Services() {
       id="services"
       ref={services}
     >
-      <section className="text-center item">
+      <section className="text-center item ">
         <div className="text-orangeMain underline underline-offset-4  ">
           Services
         </div>
@@ -46,7 +46,7 @@ export default function Services() {
 
       {/* -------------------- */}
       <section className="flex flex-col md:flex-row gap-5 mt-10 px-5 lg:px-32">
-        <div className="item">
+        <div className="item flex-1">
           <Service
             title="Front End Web Development"
             details="Do any industrial level professional Front End Web Development and Coding in React JS"
@@ -54,7 +54,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="item">
+        <div className="item flex-1">
           <Service
             title="Website Designing"
             details="Professional Website Designing in Figma, Photoshop & XD"
@@ -62,7 +62,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="item">
+        <div className="item flex-1">
           <Service
             title="Convert Design into Website"
             details="Convert any Design to Pixel Perfect HTML Website Fully Responsive to all Screen Sizes"
