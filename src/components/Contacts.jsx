@@ -98,7 +98,12 @@ export default function Contacts() {
           Let Me Know Here
         </h1>
 
-        <form name="conatct" netlify className="flex flex-col gap-5">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          className="flex flex-col gap-5"
+        >
           <input
             type="text"
             placeholder="Enter your name here"
