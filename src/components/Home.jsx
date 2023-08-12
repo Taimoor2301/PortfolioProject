@@ -22,11 +22,9 @@ let svg = (
   </svg>
 );
 
-export default function Home() {
+export default function Home({ animationReady }) {
   let myRef = useRef();
   let tl = useRef();
-
-  let [reversed, setReversed] = useState(false);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -59,10 +57,6 @@ export default function Home() {
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    tl.current.reversed(reversed);
-  }, [reversed]);
-
   return (
     <main
       className="flex md:flex-row flex-col gap-2 md:gap-10text-[white] py-4 px-2"
@@ -92,10 +86,7 @@ export default function Home() {
         {/* shapes */}
         <div className="flex flex-col gap-10 px-8 items-center">
           <div className="triangle"> {svg}</div>
-          <div
-            className="w-[3rem] h-[3rem] bg-greenShade rounded-[50%] circle"
-            onClick={() => setReversed(!reversed)}
-          ></div>
+          <div className="w-[3rem] h-[3rem] bg-greenShade rounded-[50%] circle"></div>
         </div>
 
         <div className="text-orangeMain flex items-center justify-between  gap-2 underline underline-offset-4 w-full text">
