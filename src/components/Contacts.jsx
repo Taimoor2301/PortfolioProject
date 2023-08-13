@@ -1,9 +1,21 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "gsap/all";
+import emailjs from "@emailjs/browser";
 gsap.registerPlugin(ScrollTrigger);
+import { FadeLoader } from "react-spinners";
 
 export default function Contacts() {
   let contacts = useRef(null);
+  let form = useRef();
+  const [buttonText, setButtonText] = useState("Get a Quote");
+  const loading = (
+    <FadeLoader
+      color="#ffffff"
+      size={50}
+      aria-label="Loading Spinner"
+      data-testid="loader"
+    />
+  );
   useLayoutEffect(() => {
     let ctx = gsap.context((self) => {
       let items = self.selector(".item");
@@ -25,6 +37,37 @@ export default function Contacts() {
 
     return () => ctx.revert();
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setButtonText(
+      <FadeLoader
+        color="#ffffff"
+        size={50}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    );
+
+    emailjs
+      .sendForm(
+        "service_jlhvuut",
+        "template_bvm5kle",
+        form.current,
+        "LOFQ_J8R5GoUBMA9e"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          window.alert("sent");
+          setButtonText("success");
+        },
+        (error) => {
+          console.log(error.text);
+          window.alert("error");
+        }
+      );
+  };
 
   return (
     <main
@@ -99,31 +142,36 @@ export default function Contacts() {
         </h1>
 
         <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
+          name="form"
+          ref={form}
+          onSubmit={sendEmail}
           className="flex flex-col gap-5"
         >
           <input
             type="text"
             placeholder="Enter your name here"
             className="p-4 bg-[grey] item"
+            name="sender-name"
           />
           <input
             type="email"
             placeholder="Enter your email here"
             className="p-4 bg-[grey] item"
+            name="sender-email"
           />
           <textarea
-            name=""
+            name="message"
             id=""
             cols="20"
             rows="5"
             placeholder="Tell me details about project"
             className="p-4 bg-[grey] item"
           ></textarea>
-          <button className="text-[white] font-semibold text-sm bg-orangeMain self-start px-10 py-4">
-            Get A Quote
+          <button
+            type="submit"
+            className="text-[white] font-semibold text-sm bg-orangeMain self-start h-16 w-40 flex justify-center items-center "
+          >
+            {buttonText}
           </button>
         </form>
       </section>

@@ -14,11 +14,12 @@ export default function About() {
           y: 100,
           scale: 0.75,
           opacity: 0,
+          stagger: 0.5,
           scrollTrigger: {
             trigger: item,
-            start: "top 80%",
+            start: "top 90%",
             end: "top 65%",
-            scrub: true,
+            scrub: 1,
           },
         });
       });
@@ -69,7 +70,7 @@ export default function About() {
         <span className="text-[grey]">Lets talk with me</span>
 
         <div className="text-orangeMain text-xl mt-auto font-semibold flex justify-between items-center">
-          <a href="#">info@example.com</a>
+          <a href="mailto:taimoorali4214@gmail.com">taimoorali4214@gmail.com</a>
           <i className="fa-solid fa-arrow-right text-4xl"></i>
         </div>
       </section>

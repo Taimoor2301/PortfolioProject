@@ -36,11 +36,11 @@ function Navbar() {
   return (
     <div className="sticky top-0 z-50">
       <nav
-        className="flex lg:px-32 px-2 justify-between items-center text-[#c9c9c9] bg-darkPrimary  
+        className="flex lg:px-32 px-2 py-2 justify-between items-center text-[#c9c9c9] bg-darkPrimary  
       gap-5 sticky top-0 z-50"
         ref={myRef}
       >
-        <div className="bg-orangeMain h-10 md:h-16 md:text-4xl flex items-center justify-center aspect-square text-[white] font-bold text-xl md:my-5">
+        <div className="bg-orangeMain h-10 md:h-14 md:text-4xl flex items-center justify-center aspect-square text-[white] font-bold text-xl md:my-2">
           T.
         </div>
 
@@ -98,12 +98,12 @@ function Navbar() {
           ></i>
           {(hidden && (
             <i
-              className="fa-solid fa-bars-staggered bg-orangeMain p-3 text-[white]"
+              className="fa-solid fa-bars-staggered bg-orangeMain h-10 md:h-14 aspect-square flex items-center justify-center text-[white]"
               onClick={showLinks}
             ></i>
           )) || (
             <i
-              className="fa-solid fa-xmark  bg-orangeMain p-3 text-[white]"
+              className="fa-solid fa-xmark  bg-orangeMain h-10 md:h-14 aspect-square flex items-center justify-center  text-[white]"
               onClick={showLinks}
             ></i>
           )}
@@ -111,7 +111,7 @@ function Navbar() {
       </nav>
 
       <div
-        className="flex w-full justify-center items-center mt-1 h-0 overflow-hidden transition-all absolute"
+        className="flex w-full justify-center items-center mt-1 h-0 overflow-hidden transition-all absolute rounded-md"
         style={{ height: search && "60px" }}
       >
         <input type="search" className="px-5 py-3 md:w-[65%] w-full" />
